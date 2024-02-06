@@ -11939,3 +11939,33 @@ html {
   left: 50%;
   transform: translateX(-50%);
 }
+
+body {
+  background: url("../assets/bg-gerak.png") fixed center no-repeat;
+  background-size: cover;
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+#startForm .btn {
+  padding: 9px;
+}
+
+input[type="text"] {
+  border-radius: 5px;
+  border: none;
+  padding: 9px;
+}
+
+input[type="text"]:hover {
+  border: none;
+  outline: none;
+}
