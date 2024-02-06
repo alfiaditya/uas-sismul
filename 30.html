@@ -54,7 +54,7 @@
                     <div class="d-flex justify-content-between">
                         <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="29.html">BACK</a>
                         <div>
-                            <a class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder" id="submitAnswers">SUBMIT JAWABAN</a>
+                            <a class="btn btn-success btn-lg px-5 py-3 fs-6 fw-bolder" id="submitAnswers" >SUBMIT JAWABAN</a>
                         </div>
                     </div>
                 </div>
@@ -68,26 +68,21 @@
     <!-- Pastikan skor dan nama pemain sudah disimpan di localStorage sebelum menampilkan -->
     <script>
         document.getElementById('submitAnswers').addEventListener('click', function() {
-            // Menginisialisasi skor jika belum ada dalam localStorage
-            var score = localStorage.getItem('score');
-            if (!score) {
-                localStorage.setItem('score', '0');
-            }
-        
             // Memeriksa jawaban yang dipilih
             var selectedAnswer = document.querySelector('input[name="flexRadioDefault"]:checked');
             if (selectedAnswer) {
                 var selectedValue = parseInt(selectedAnswer.value); // Mendapatkan nilai jawaban yang dipilih
                 updateScore(selectedValue); // Memperbarui skor berdasarkan jawaban
-            } 
-        
-            // Mengarahkan pengguna ke halaman score.html untuk menampilkan skor
-            window.location.href = 'score.html';
+                // Mengarahkan pengguna ke halaman score.html untuk menampilkan skor
+                window.location.href = 'score.html';
+            } else {
+                alert('Anda harus memilih jawaban sebelum melanjutkan!');
+            }
         });
         
         // Fungsi untuk memperbarui skor berdasarkan jawaban
         function updateScore(selectedValue) {
-            var currentScore = parseInt(localStorage.getItem('score'));
+            var currentScore = parseInt(localStorage.getItem('score')) || 0;
             localStorage.setItem('score', currentScore + selectedValue);
         }
         

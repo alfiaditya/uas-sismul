@@ -19,19 +19,26 @@
 </head>
 <body>
     <div class="container text-center mt-5">
-        <h1 class="mb-3">Skor Akhir Anda</h1>
+        <h1 class="mb-3" id="judul">Selamat </h1>
+
         <div id="scoreDisplay" class="alert alert-success" role="alert">
             Memuat skor...
         </div>
         <a href="index.html" class="btn btn-primary">Mulai Lagi</a>
     </div>
+    <audio autoplay>
+        <source src="audio/backsound.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            var playerName = localStorage.getItem('playerName') || ''; // Mengambil nama pemain dari localStorage
+            document.getElementById('judul').innerText += ' ' + playerName; // Menambahkan nama pemain ke judul
             var score = localStorage.getItem('score') || '0'; // Mengambil skor dari localStorage
-            document.getElementById('scoreDisplay').innerText = 'Skor Anda adalah: ' + score + ' dari 100';
+            document.getElementById('scoreDisplay').innerText = 'Anda Berhasil Mendapat Score : ' + score;
         });
     </script>
+
     <!-- Bootstrap core JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS -->
