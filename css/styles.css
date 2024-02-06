@@ -11957,6 +11957,7 @@ body {
 
 #startForm .btn {
   padding: 9px;
+  margin-left: 25px;
 }
 
 input[type="text"] {
