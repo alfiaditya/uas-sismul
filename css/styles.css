@@ -11922,22 +11922,17 @@ html {
 }
 
 .profile {
-  position: relative;
-  height: 30vw;
-  width: 30vw;
+  position: absolute;
+  top: -20;
   border-radius: 5vw;
   margin-top: -20vw;
-  margin-right: 50vw;
-  max-height: 40rem;
-  max-width: 40rem;
+  margin-right: 85vw;
+  justify-content: center;
 }
+
 .profile .profile-img {
-  height: 30vw;
-  max-height: 45rem;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  align-items: center;
+  top: 0;
 }
 
 body {
