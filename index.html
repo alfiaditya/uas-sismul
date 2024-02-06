@@ -40,9 +40,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="1.html">START</a>
+                <div>
+                    <div class="container text-center mt-5">
+                        <form id="startForm">
+                            <input type="text" id="playerName" placeholder="Masukkan Nama Anda" required>
+                            <button type="submit" class="btn btn-primary">Mulai Game</button>
+                        </form>
+                    </div>
                 </div>
+                <script>
+                    document.getElementById('startForm').addEventListener('submit', function(e) {
+                        e.preventDefault(); // Menghentikan pengajuan form standar
+                        var playerName = document.getElementById('playerName').value;
+                        if(playerName) { // Cek jika nama pemain telah diisi
+                            localStorage.setItem('playerName', playerName); // Menyimpan nama pemain ke localStorage
+                            localStorage.setItem('score', '0'); // Inisialisasi skor dengan 0
+                            window.location.href = '1.html'; // Mengarahkan ke halaman pertama soal
+                        }
+                    });
+                </script>
             </header>
         </footer>
         <!-- Bootstrap core JS-->
