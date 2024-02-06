@@ -32,25 +32,25 @@
                                             <h2 class="fw-bolder">Pertanyaan 19</h2>
                                             <p>Ayah Daffa ditilang karena belok kiri di tempat yanng tidak semestinya. Maka ayah daffa melanggar rambu </p>
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0">
+                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0"onclick="updateScore(false)">
                                               <label class="form-check-label" for="flexRadioDefault1">
                                                  <img src="assets/dilarangstop.png"  width="20%" height="10%">
                                               </label>
                                             </div>
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1">
+                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1"onclick="updateScore(true)">
                                               <label class="form-check-label" for="flexRadioDefault2">
                                                 <img src="assets/Dilarang Belok Kiri.jpeg" width="30%" height="10%">
                                               </label>
                                             </div>
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="0">
+                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="0"onclick="updateScore(false)">
                                               <label class="form-check-label" for="flexRadioDefault3">
                                                 <img src="assets/Dilarangg Masuk Motor.jpeg" width="10%" height="5%">
                                               </label>
                                             </div>
                                             <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="0">
+                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="0"onclick="updateScore(false)">
                                               <label class="form-check-label" for="flexRadioDefault4">
                                                 <img src="assets/Dilarang Klakson.png" width="10%" height="5%">
                                               </label>
@@ -72,17 +72,19 @@
             <audio autoplay>
               <source src="audio/backsound.mp3" type="audio/mpeg">
             </audio>
-            
+
+            <!-- Pastikan skor sudah disimpan di localStorage sebelum menampilkan -->
             <script>
               // Fungsi untuk memperbarui skor berdasarkan jawaban
               function updateScore(isCorrect) {
-                let currentScore = parseInt(localStorage.getItem('score') || 0, 10);
-                if (isCorrect) {
-                    // Tambahkan nilai 3 ke dalam skor jika jawaban benar
-                    localStorage.setItem('score', currentScore + 1);
-                }
-            }
-          </script>
+                  let currentScore = parseInt(localStorage.getItem('score') || 0, 10);
+                  if (isCorrect) {
+                      // Tambahkan nilai 3 ke dalam skor jika jawaban benar
+                      localStorage.setItem('score', currentScore + 3);
+                  }
+              }
+            </script>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

@@ -32,25 +32,25 @@
                                             <h2 class="fw-bolder">Pertanyaan 6</h2>
                                             <p>Jika kita kehabisan bensin, maka rambu mana yang harus kita cari agar bisa mengisi bensin di Tempat Pengisian Bahan Bakar Umum ?</p>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0"onclick="updateScore(false)">
                                                 <label class="form-check-label" for="flexRadioDefault1">
                                                    <img src="assets/Belok Kiri.png" alt="" width="60px" height="80px">
                                                 </label>
                                               </div>
                                               <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="0">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="0"onclick="updateScore(false)">
                                                 <label class="form-check-label" for="flexRadioDefault2">
                                                   <img src="assets/Belok Kanan.jpeg" alt="" width="60px" height="80px">
                                                 </label>
                                               </div>
                                               <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="0">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="0"onclick="updateScore(false)">
                                                 <label class="form-check-label" for="flexRadioDefault3">
                                                   <img src="assets/Dilarang Belok Kiri.jpeg" alt="" width="80px" height="80px">
                                                 </label>
                                               </div>
                                               <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="1">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="1"onclick="updateScore(true)">
                                                 <label class="form-check-label" for="flexRadioDefault4">
                                                   <img src="assets/SPBU.png" alt="" width="60px" height="80px">
                                                 </label>
@@ -72,16 +72,17 @@
             <audio autoplay>
               <source src="audio/backsound.mp3" type="audio/mpeg">
             </audio>
+            <!-- Pastikan skor sudah disimpan di localStorage sebelum menampilkan -->
             <script>
               // Fungsi untuk memperbarui skor berdasarkan jawaban
               function updateScore(isCorrect) {
-                let currentScore = parseInt(localStorage.getItem('score') || 0, 10);
-                if (isCorrect) {
-                    // Tambahkan nilai 3 ke dalam skor jika jawaban benar
-                    localStorage.setItem('score', currentScore + 1);
-                }
-            }
-          </script>
+                  let currentScore = parseInt(localStorage.getItem('score') || 0, 10);
+                  if (isCorrect) {
+                      // Tambahkan nilai 3 ke dalam skor jika jawaban benar
+                      localStorage.setItem('score', currentScore + 3);
+                  }
+              }
+            </script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
