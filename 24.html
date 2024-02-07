@@ -62,7 +62,7 @@
                             <div class="d-flex justify-content-between">
                              <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="23.html">BACK</a>
                           <div>
-                           <a class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder" href="25.html">NEXT</a>
+                           <a class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder"  onclick="nextQuestion()">NEXT</a>
                           </div>
                           </div>
                         </div>
@@ -82,6 +82,16 @@
                       localStorage.setItem('score', currentScore + 3);
                   }
               }
+              function nextQuestion() {
+                var selectedAnswer = document.querySelector('input[name="flexRadioDefault"]:checked');
+                if (selectedAnswer) {
+                    var selectedValue = parseInt(selectedAnswer.value);
+                    updateScore(selectedValue);
+                    window.location.href = '25.html'; // Ubah ke halaman selanjutnya
+                } else {
+                    alert('Anda harus memilih jawaban sebelum melanjutkan!');
+                }
+            }
             </script>
 
         <!-- Bootstrap core JS-->
